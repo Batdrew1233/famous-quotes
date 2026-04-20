@@ -16,15 +16,28 @@ public class FamousQuotes {
         quotes[7] = "Never be limited by other people’s limited imaginations.";
         quotes[8] = "The only impossible journey is the one you never begin.";
         quotes[9] = "Don’t watch the clock; do what it does. Keep going.";
-        try {
-            System.out.print("Select A number from 1-10 to get a quote: ");
-            int userNum = scanner.nextInt();
-            System.out.println("Your quote is: " + quotes[userNum - 1]);
-        }
-        catch(Exception ex){
-            System.out.println("Invalid number try again.");
+        boolean isDone = false;
+        while (!isDone){
+            try {
+                System.out.print("Select A number from 1-10 to get a quote: ");
+                int userNum = scanner.nextInt();
+                System.out.println("Your quote is: " + quotes[userNum - 1]);
+
+                System.out.println("Would you like another quote?");
+                System.out.println("Press 1 for YES and 2 for NO.");
+                int command = scanner.nextInt();
+                if (command == 2){
+                    System.out.println("Exiting");
+                    isDone = true;
+                }
+            } catch (Exception ex) {
+                System.out.println("Invalid number try again.");
+            }
         }
 
         scanner.close();
     }
-}
+
+        }
+
+
